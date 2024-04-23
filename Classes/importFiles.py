@@ -1,4 +1,4 @@
-from Classes import File
+from classes import File
 
 fileComercio = File('D:/Estudos/Pos_Graduacao_FIAP/Modulo_1/tech_challenge/Comercio.csv')
 fileExpEspumantes = File('D:/Estudos/Pos_Graduacao_FIAP/Modulo_1/tech_challenge/ExpEspumantes.csv')
@@ -49,11 +49,3 @@ print(fileProcessaMesa.getFile().head())
 print(fileProcessaSemclass.getFile().head())
 print(fileProcessaViniferas.getFile().head())
 print(fileProducao.getFile().head())
-
-#pathFile = 'D:/Estudos/Pos_Graduacao_FIAP/Modulo_1/tech_challenge/Comercio.csv'
-#pathFile = "D:/c.csv"
-#fileComercio= pd.read_csv(pathFile,sep=';')
-#print(fileComercio)
-#print(fileComercio.head())
-#print(fileComercio.count())
-#print('hello')
