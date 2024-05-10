@@ -1,5 +1,8 @@
+
 from fastapi import FastAPI
 from pydantic import BaseModel
+#from Classes.comercializacao import FileComercializacao as fc
+#import Classes.comercializacao as co
 
 app = FastAPI()
 
@@ -27,3 +30,16 @@ async def create_task(task:Task):
 async def delete_task(task_id:int):
     global tasks
     tasks = [task for task in tasks if task.id != task_id]
+""""
+@app.get('/files/{url}')
+async def read_data(url: str):
+    dados = {
+        "path": "",
+        "fileName": "comercializacao.csv",
+        "url": url
+    }
+    #fileComercializacao = co.FileComercializacao(**dados)
+    #listaRetornoCSV = fileComercializacao.LerCsv()
+    #return {'Data:':listaRetornoCSV[1]}
+    return {'dados':co.FileComercializacao(**dados).LerCsv()}
+"""
