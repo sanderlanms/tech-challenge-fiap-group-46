@@ -3,7 +3,8 @@ from httpx import AsyncClient
 
 #import sys
 #sys.path.append("../App")
-from App import app
+import app
+
 
 @pytest.mark.asyncio
 async def test_read_tasks():
