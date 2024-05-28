@@ -58,7 +58,7 @@ class File(BaseModel):
             os.makedirs(_basePath)
         urllib.request.urlretrieve(self.url, _basePath+self.fileName)
 
-    def read_csv(self, removeHeader=False):
+    def read_csv(self, fileName, removeHeader=False):
         self.setAttributePath()
         with open(self.path, 'r', encoding='UTF-8') as file:
             if (removeHeader):
