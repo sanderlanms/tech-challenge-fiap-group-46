@@ -1,7 +1,7 @@
-from comercializacao import FileComercializacao
-from exportacao import FileExportacao
-from processamento import FileProcessamento
-from producao import FileProducao
+from Classes.comercializacao import FileComercializacao
+from Classes.exportacao import FileExportacao
+from Classes.processamento import FileProcessamento
+from Classes.producao import FileProducao
 
 dadosComercializacao = {
     "path": "",
@@ -9,6 +9,7 @@ dadosComercializacao = {
     "url": "http://vitibrasil.cnpuv.embrapa.br/download/Comercio.csv",
     "list": []
 }
+
 fileComercializacao = FileComercializacao(**dadosComercializacao)
 listaRetornoCSV = fileComercializacao.get_list_by_csv()
 print('__________________COMERCIALIZACAO___________________')
@@ -49,13 +50,12 @@ listExportacao = {"Vinhos": dadosExportacaoVinhos
 , "Sucos": dadosExportacaoSucos
 }
 
-
 listaRetornoExportacaoCSV = []
 
 for key, val in listExportacao.items():
     fileExportacao = FileExportacao(**val)
     listaRetornoExportacaoCSV.append(fileExportacao.get_list_by_csv(key))
-    #print(key)
+
 print('_____________________EXPORTACAO_____________________')
 print(listaRetornoExportacaoCSV[0][1])
 print(listaRetornoExportacaoCSV[1][1])
@@ -63,39 +63,41 @@ print(listaRetornoExportacaoCSV[2][1])
 print(listaRetornoExportacaoCSV[3][1])
 print('____________________________________________________')
 
-
-
-
 dadosImportacaoVinhos = {
         "path": "",
         "fileName": "ImportacaoVinhos.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ImpVinhos.csv",
         "list": []
     }
+
 dadosImportacaoEspumantes = {
         "path": "",
         "fileName": "ImportacaoEspumantes.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ImpEspumantes.csv",
         "list": []
     }
+
 dadosImportacaoFrescas = {
         "path": "",
         "fileName": "ImportacaoFrescas.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ImpFrescas.csv",
         "list": []
     }
+
 dadosImportacaoPassas = {
         "path": "",
         "fileName": "ImportacaoPassas.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ImpPassas.csv",
         "list": []
     }
+
 dadosImportacaoSucos = {
         "path": "",
         "fileName": "ImportacaoSucos.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ImpSuco.csv",
         "list": []
     }
+
 listImportacao = {"Vinhos": dadosImportacaoVinhos
                     , "Espumantes": dadosImportacaoEspumantes
                     , "Uvas_Frescas": dadosImportacaoFrescas
@@ -103,13 +105,12 @@ listImportacao = {"Vinhos": dadosImportacaoVinhos
                     , "Sucos": dadosImportacaoSucos
                 }
 
-
 listaRetornoImportacaoCSV = []
 
 for key, val in listImportacao.items():
     fileImportacao = FileExportacao(**val)
     listaRetornoImportacaoCSV.append(fileImportacao.get_list_by_csv(key))
-    #print(key)
+
 print('_____________________IMPORTACAO_____________________')
 print(listaRetornoImportacaoCSV[0][1])
 print(listaRetornoImportacaoCSV[1][1])
@@ -118,25 +119,27 @@ print(listaRetornoImportacaoCSV[3][1])
 print(listaRetornoImportacaoCSV[4][1])
 print('____________________________________________________')
 
-
 dadosProcessaViniferas = {
         "path": "",
         "fileName": "ProcessaViniferas.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ProcessaViniferas.csv",
         "list": []
     }
+
 dadosProcessaAmericanas = {
         "path": "",
         "fileName": "ProcessaAmericanas.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ProcessaAmericanas.csv",
         "list": []
     }
+
 dadosProcessaMesa = {
         "path": "",
         "fileName": "ProcessaMesa.csv",
         "url": "http://vitibrasil.cnpuv.embrapa.br/download/ProcessaMesa.csv",
         "list": []
     }
+
 dadosProcessaSemclass = {
         "path": "",
         "fileName": "ProcessaSemclass.csv",
@@ -150,13 +153,12 @@ listProcessamento = {"Viniferas": dadosProcessaViniferas
                     ,"SemClasse": dadosProcessaSemclass
                 }
 
-
 listaRetornoProcessamentoCSV = []
 
 for key, val in listProcessamento.items():
     fileProcessamento = FileProcessamento(**val)
     listaRetornoProcessamentoCSV.append(fileProcessamento.get_list_by_csv(key))
-    #print(key)
+
 print('___________________PROCESSAMENTO____________________')
 print(listaRetornoProcessamentoCSV[0][1])
 print(listaRetornoProcessamentoCSV[1][1])
@@ -164,14 +166,13 @@ print(listaRetornoProcessamentoCSV[2][1])
 print(listaRetornoProcessamentoCSV[3][0])
 print('____________________________________________________')
 
-
-
 dadosProducao = {
     "path": "",
     "fileName": "prod.csv",
     "url": "http://vitibrasil.cnpuv.embrapa.br/download/Producao.csv",
     "list": []
 }
+
 fileProducao = FileProducao(**dadosProducao)
 listaRetornoProducaoCSV = fileProducao.get_list_by_csv()
 print('_____________________PRODUCAO_______________________')

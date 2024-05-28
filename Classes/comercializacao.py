@@ -1,14 +1,7 @@
-#from typing import List
-#from pydantic import BaseModel
-from file import *
-
-#from Utils.Utils import GetCsv, ReadCsv
-
-#_fileNameProd = 'comercializacao.csv'
+from Classes.utils import  File, RetornoAuxiliar, Retorno
 
 class FileComercializacao(File):
 
-    #def LerCsv(self):
     def get_list_by_csv(self):
         self.download_csv()
         csv = self.read_csv(self.fileName,True)
@@ -22,7 +15,3 @@ class FileComercializacao(File):
             lista.append(retorno)
         self.setAttributeList(lista)
         return lista
-
-    """def find(self,month,year):
-        retorno = self.list
-        return retorno"""

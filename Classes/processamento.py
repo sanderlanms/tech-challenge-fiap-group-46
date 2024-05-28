@@ -1,6 +1,7 @@
-from file import *
+from Classes.utils import File, RetornoImportacao, RetornoAuxiliar
 
 class FileProcessamento(File):
+    
     def ordernar_por_nome(linha):
         return linha.trim().lower().split('\t')[1]
 
@@ -16,5 +17,3 @@ class FileProcessamento(File):
                 retorno.Dados.append(RetornoAuxiliar(Ano=csv_colunas[j], Valor=csv_linha[j] if csv_linha[j].isdigit() else 0))
             lista.append(retorno)
         return lista
-
-

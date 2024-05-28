@@ -1,20 +1,13 @@
-from file import *
+from Classes.utils import File, RetornoExportacao, RetornoAuxiliar
 
 class FileImportacao(File):
 
     def ordernar_por_nome(linha):
         return linha.lower().split('\t')[1]
 
-    #def LerCsv():
     def get_list_by_csv(self,tipoProduto):
         self.download_csv()
-        """Dicionario = {
-                        'Vinhos': _fileNameProd1,
-                        'Espumantes': _fileNameProd2,
-                        'Uvas_Frescas': _fileNameProd3,
-                        'Uvas_Passadas': _fileNameProd4,
-                        'Sucos': _fileNameProd5,
-        }"""
+
         lista = []
         csv = self.read_csv(self.fileName,False)
         csv_colunas = csv[0].split(';')
@@ -25,5 +18,3 @@ class FileImportacao(File):
                 retorno.Dados.append(RetornoAuxiliar(Ano=csv_colunas[j], Valor=csv_linha[j] if csv_linha[j] != '' else 0))
             lista.append(retorno)
         return lista
-
-
