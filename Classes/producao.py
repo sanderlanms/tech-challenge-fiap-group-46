@@ -1,4 +1,4 @@
-from file import *
+from Classes.utils import File, RetornoProducao, RetornoAuxiliar
 
 class FileProducao(File):
 
